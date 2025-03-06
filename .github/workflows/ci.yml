@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project with API
+        run: |
+          mkdir build-API
+          cd build-API
+          cmake ..
+          make
+
+      - name: Build project with mmap
+        run: |
+          mkdir build-mmap
+          cd build-mmap
+          cmake -Dmemory_mapping=ON ..
+          make
