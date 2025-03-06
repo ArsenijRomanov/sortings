@@ -111,7 +111,7 @@ int main(int argc, char *argv[]) {
   }
 
 end:
-  for (size_t i = 0; i < strings_cnt; ++i)
+  for (size_t i = 0; i < cnt; ++i)
     free(strings[i]);
   free(strings);
   return exit_code;
