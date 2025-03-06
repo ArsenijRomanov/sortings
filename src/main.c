@@ -106,12 +106,12 @@ int main(int argc, char *argv[]) {
     goto end;
   }
 
-  for (size_t i = 0; i < strings_cnt; ++i) {
+  for (size_t i = 0; i < cnt; ++i) {
     printf("%s\n", strings[i]);
   }
 
 end:
-  for (size_t i = 0; i < cnt; ++i)
+  for (size_t i = 0; i < strings_cnt; ++i)
     free(strings[i]);
   free(strings);
   return exit_code;
